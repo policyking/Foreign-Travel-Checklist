@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Risk Intelligence</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span>Travel Risk Intelligence</span>
+      </div>
+      <span class="header-sub">Live open-source advisories · conflict data · health alerts</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="inputs">
+      <div class="input-block">
+        <label for="destination-input">
+          <span class="label-title">Where are they traveling?</span>
+          <span class="label-hint">Describe in your own words — city, country, route, purpose, anything you know</span>
+        </label>
+        <textarea
+          id="destination-input"
+          rows="4"
+          placeholder="e.g. Flying into Nairobi, then driving to Kampala via the Uganda border crossing. Client meetings and site visits. Staying in the CBD."
+        ></textarea>
+      </div>
+
+      <div class="input-block">
+        <label for="dates-input">
+          <span class="label-title">When are they traveling?</span>
+          <span class="label-hint">Dates, duration, or any time reference</span>
+        </label>
+        <textarea
+          id="dates-input"
+          rows="4"
+          placeholder="e.g. Departing May 15, back by May 25 — or 'two weeks starting next Monday'"
+        ></textarea>
+      </div>
+
+      <button id="analyze-btn" onclick="analyzeTravel()">
+        <span id="btn-text">Generate Risk Intelligence</span>
+        <span id="btn-spinner" class="spinner hidden"></span>
+      </button>
+    </section>
+
+    <div id="error-banner" class="error-banner hidden"></div>
+
+    <section id="results" class="results hidden">
+
+      <div id="destination-header" class="dest-header"></div>
+
+      <div id="sources-grid" class="sources-grid"></div>
+
+    </section>
+  </main>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
