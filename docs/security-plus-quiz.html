@@ -422,7 +422,7 @@
     <h2>Ready to Test?</h2>
     <p>This exam mirrors the official Practice Exam A.</p>
     <ul>
-      <li>✦ 85 multiple-choice questions (A6–A90)</li>
+      <li>✦ 106 questions — all 90 (A1–A90) adapted for interactive format</li>
       <li>✦ One question at a time with immediate feedback</li>
       <li>✦ Tracks wrong answers and weak categories</li>
       <li>✦ Full explanations after each answer</li>
@@ -498,6 +498,174 @@ const DOMAINS = {
 };
 
 const questions = [
+  // ── A1: Match attack types ──────────────────────────────────────────
+  {
+    id:"A1a", domain:"2",
+    q:"[Performance-Based] An attacker obtains a bank account number and birth date by calling the victim. Which attack type BEST describes this?",
+    choices:["A. RFID cloning","B. Vishing","C. Keylogger","D. On-path"],
+    correct:[1],
+    exp:"Vishing (voice phishing) is social engineering over the telephone. Obtaining personal financial info by calling the victim is a classic vishing attack."
+  },
+  {
+    id:"A1b", domain:"2",
+    q:"[Performance-Based] An attacker accesses a database directly from a web browser. Which attack type BEST describes this?",
+    choices:["A. Rootkit","B. Supply chain","C. Injection","D. DDoS"],
+    correct:[2],
+    exp:"A SQL injection attack sends SQL commands directly to a database through a vulnerable web application — accessible from a browser."
+  },
+  {
+    id:"A1c", domain:"2",
+    q:"[Performance-Based] An attacker intercepts all communication between a client and a web server. Which attack type BEST describes this?",
+    choices:["A. Vishing","B. On-path","C. Rootkit","D. Keylogger"],
+    correct:[1],
+    exp:"An on-path (man-in-the-middle) attacker positions themselves invisibly between two devices to read or modify all traffic in real-time."
+  },
+  {
+    id:"A1d", domain:"2",
+    q:"[Performance-Based] Multiple attackers overwhelm a web server, making it unavailable. Which attack type BEST describes this?",
+    choices:["A. RFID cloning","B. Injection","C. Supply chain","D. DDoS"],
+    correct:[3],
+    exp:"A DDoS (Distributed Denial of Service) uses multiple third-parties working together to create a service outage by overwhelming the target."
+  },
+  {
+    id:"A1e", domain:"2",
+    q:"[Performance-Based] An attacker obtains a list of all login credentials typed over the last 24 hours. Which attack type BEST describes this?",
+    choices:["A. Vishing","B. On-path","C. Supply chain","D. Keylogger"],
+    correct:[3],
+    exp:"Keylogger software captures all keystrokes and can covertly transmit them to the attacker — including every username and password typed."
+  },
+  // ── A2: Physical security controls ─────────────────────────────────
+  {
+    id:"A2a", domain:"1",
+    q:"[Performance-Based] A manufacturing company is creating security standards. What are the BEST security controls for the outside parking lot and visitor drop-off area?",
+    choices:["A. Fencing and Lighting","B. Security guard and Access control vestibule","C. Access badge and Biometrics","D. Authentication token and Fencing"],
+    correct:[0],
+    exp:"Fencing controls perimeter access; lighting deters threats and keeps the exterior safe for employees and visitors parking or being dropped off."
+  },
+  {
+    id:"A2b", domain:"1",
+    q:"[Performance-Based] A manufacturing company is creating security standards. What are the BEST security controls for the building lobby and reception area?",
+    choices:["A. Fencing and Lighting","B. Security guard and Access control vestibule","C. Access badge and Biometrics","D. Authentication token and Video surveillance"],
+    correct:[1],
+    exp:"A security guard verifies authorization at the first human checkpoint; an access control vestibule manages the physical flow of individuals through that checkpoint."
+  },
+  {
+    id:"A2c", domain:"1",
+    q:"[Performance-Based] A manufacturing company is creating security standards. What are the BEST security controls for the data center entrance door (accessed from inside the building)?",
+    choices:["A. Fencing and Lighting","B. Security guard and Access control vestibule","C. Access badge and Biometrics","D. Authentication token and Lighting"],
+    correct:[2],
+    exp:"Sensitive internal areas require multi-factor physical authentication. An access badge (something you have) combined with biometrics (something you are) provides two-factor access control."
+  },
+  {
+    id:"A2d", domain:"1",
+    q:"[Performance-Based] A manufacturing company is creating security standards. What is the BEST security control for authenticating to the server console inside the data center?",
+    choices:["A. Access badge","B. Biometrics","C. Authentication token","D. Security guard"],
+    correct:[2],
+    exp:"Console access to a server requires the username, password, and an authentication token — the token provides the multi-factor layer for logical access once inside the data center."
+  },
+  // ── A3: Security control categories ────────────────────────────────
+  {
+    id:"A3a", domain:"1",
+    q:"[Performance-Based] A guard checks the identification of all visitors. Which security control category BEST describes this?",
+    choices:["A. Technical","B. Managerial","C. Operational","D. Physical"],
+    correct:[2],
+    exp:"Operational controls are implemented by people rather than systems. A guard checking IDs is a human-executed operational control."
+  },
+  {
+    id:"A3b", domain:"1",
+    q:"[Performance-Based] All returns must be approved by a Vice President. Which security control category BEST describes this?",
+    choices:["A. Technical","B. Managerial","C. Operational","D. Physical"],
+    correct:[1],
+    exp:"Managerial controls are administrative controls associated with security design and policy. A VP approval requirement is a policy-level managerial control."
+  },
+  {
+    id:"A3c", domain:"1",
+    q:"[Performance-Based] A generator is used during a power outage. Which security control category BEST describes this?",
+    choices:["A. Technical","B. Managerial","C. Operational","D. Physical"],
+    correct:[3],
+    exp:"Physical controls limit or support physical access and operations. A backup generator is a physical infrastructure control."
+  },
+  {
+    id:"A3d", domain:"1",
+    q:"[Performance-Based] Building doors can be unlocked with an access card. Which security control category BEST describes this?",
+    choices:["A. Technical","B. Managerial","C. Operational","D. Physical"],
+    correct:[3],
+    exp:"Badge readers and electronically controlled doors are physical controls — they directly limit physical access to a space."
+  },
+  {
+    id:"A3e", domain:"1",
+    q:"[Performance-Based] System logs are transferred automatically to a SIEM. Which security control category BEST describes this?",
+    choices:["A. Technical","B. Managerial","C. Operational","D. Physical"],
+    correct:[0],
+    exp:"Technical controls are implemented using systems. Automated log forwarding to a SIEM is a technical control — no human action required."
+  },
+  // ── A4: Authentication factors ──────────────────────────────────────
+  {
+    id:"A4a", domain:"4",
+    q:"[Performance-Based] During the login process, your phone receives a text message with a one-time passcode. Which authentication factor does this represent?",
+    choices:["A. Something you know","B. Something you have","C. Something you are","D. Somewhere you are"],
+    correct:[1],
+    exp:"Receiving a code on your phone requires possession of the physical device — this is 'something you have.' The phone itself is the factor, not the code."
+  },
+  {
+    id:"A4b", domain:"4",
+    q:"[Performance-Based] You enter your PIN to make a deposit into an ATM. Which authentication factor does this represent?",
+    choices:["A. Something you know","B. Something you have","C. Something you are","D. Somewhere you are"],
+    correct:[0],
+    exp:"A PIN (Personal Identification Number) is memorized — it is 'something you know.' This is the knowledge factor of authentication."
+  },
+  {
+    id:"A4c", domain:"4",
+    q:"[Performance-Based] You can use your fingerprint to unlock the door to the data center. Which authentication factor does this represent?",
+    choices:["A. Something you know","B. Something you have","C. Something you are","D. Somewhere you are"],
+    correct:[2],
+    exp:"A fingerprint is a biometric characteristic — it is 'something you are.' Biometrics represent the inherence factor of authentication."
+  },
+  {
+    id:"A4d", domain:"4",
+    q:"[Performance-Based] Your login will not work unless you are connected to the VPN. Which authentication factor does this represent?",
+    choices:["A. Something you know","B. Something you have","C. Something you are","D. Somewhere you are"],
+    correct:[3],
+    exp:"Requiring VPN connectivity ties authentication to a network location — 'somewhere you are.' Location-based authentication is the location factor."
+  },
+  // ── A5: Firewall rules ──────────────────────────────────────────────
+  {
+    id:"A5a", domain:"4",
+    q:"[Performance-Based] A stateful firewall rule must block HTTP sessions between the Web Server (10.1.1.2) and the Database Server (10.2.1.20). Which rule is correct?",
+    choices:[
+      "A. Source: 10.1.1.2 → Dest: 10.2.1.20 | TCP/80 | Block",
+      "B. Source: 10.2.1.20 → Dest: 10.1.1.2 | TCP/443 | Block",
+      "C. Source: 10.1.1.2 → Dest: 10.2.1.20 | UDP/80 | Block",
+      "D. Source: 10.1.1.2 → Dest: 10.2.1.20 | TCP/443 | Allow"
+    ],
+    correct:[0],
+    exp:"HTTP runs on TCP/80. The Web Server (10.1.1.2) is the source initiating requests to the Database Server (10.2.1.20). Since the firewall is stateful, only the outbound rule is needed — return traffic is automatically tracked."
+  },
+  {
+    id:"A5b", domain:"4",
+    q:"[Performance-Based] A stateful firewall rule must allow the Storage Server (10.2.1.33) to transfer files to the Video Server (10.1.1.7) over HTTPS. Which rule is correct?",
+    choices:[
+      "A. Source: 10.1.1.7 → Dest: 10.2.1.33 | TCP/443 | Allow",
+      "B. Source: 10.2.1.33 → Dest: 10.1.1.7 | TCP/22 | Allow",
+      "C. Source: 10.2.1.33 → Dest: 10.1.1.7 | TCP/443 | Allow",
+      "D. Source: 10.2.1.33 → Dest: 10.1.1.7 | TCP/80 | Block"
+    ],
+    correct:[2],
+    exp:"HTTPS uses TCP/443. The Storage Server (10.2.1.33) initiates the transfer to the Video Server (10.1.1.7), so it is the source. Allow the traffic."
+  },
+  {
+    id:"A5c", domain:"4",
+    q:"[Performance-Based] A stateful firewall rule must allow the Management Server (10.2.1.47) to use a secure terminal (SSH) on the File Server (10.1.1.3). Which rule is correct?",
+    choices:[
+      "A. Source: 10.2.1.47 → Dest: 10.1.1.3 | TCP/443 | Allow",
+      "B. Source: 10.1.1.3 → Dest: 10.2.1.47 | TCP/22 | Allow",
+      "C. Source: 10.2.1.47 → Dest: 10.1.1.3 | TCP/22 | Allow",
+      "D. Source: 10.2.1.47 → Dest: 10.1.1.3 | TCP/80 | Block"
+    ],
+    correct:[2],
+    exp:"SSH (secure terminal) runs on TCP/22. The Management Server (10.2.1.47) initiates the SSH session to the File Server (10.1.1.3), so it is the source. Allow the traffic."
+  },
+  // ── A6–A90: Multiple Choice ─────────────────────────────────────────
   {
     id:"A6", domain:"5",
     q:"A company has hired a third-party to gather information about the company's servers and data. This third-party will not have direct access to the company's internal network, but they can gather information from any other source. Which of the following would BEST describe this approach?",
